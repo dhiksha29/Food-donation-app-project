@@ -101,7 +101,7 @@ public class SplashActivity extends AppCompatActivity {
                 }
                 else{
                     // Directly go to Login Activity
-                    Intent intent = new Intent(SplashActivity.this, DashBoardActivity.class);
+                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
                 }

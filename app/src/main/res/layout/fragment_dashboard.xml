@@ -4,7 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DashBoardActivity">
+    android:background="#FFFAFA">
+
+    <!--    <TextView-->
+<!--        android:id="@+id/textView5"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/bangers"-->
+<!--        android:text="FUDonation"-->
+<!--        android:textColor="@color/orange"-->
+<!--        android:textSize="35sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView"-->
+<!--        app:layout_constraintVertical_bias="0" />-->
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/lottieAnimationView"
@@ -12,46 +27,31 @@
         android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".01"
+        app:layout_constraintVertical_bias="0.0"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
-        app:lottie_rawRes="@raw/json_anim_3" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/bangers"
-        android:text="FUDonation"
-        android:textColor="@color/orange"
-        android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView"
-        app:layout_constraintVertical_bias="0" />
+        app:lottie_rawRes="@raw/yellow_ration_food" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:elevation="30dp"
         android:background="@drawable/curvy_constraint"
+        android:elevation="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0">
+        app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView">
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/antic"
+            android:fontFamily="@font/merienda_one"
             android:text="Want To Share Food?"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -74,30 +74,31 @@
             app:layout_constraintVertical_bias="0" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/circleImageView"
+            android:id="@+id/donate_button"
             android:layout_width="90dp"
             android:layout_height="90dp"
-            android:src="@drawable/food_donate_button"
-            app:layout_constraintHorizontal_bias="0.25"
+            android:elevation="100dp"
+            android:src="@drawable/donate_icon_2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.25"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView7"
-            app:layout_constraintVertical_bias="0.1" />
+            app:layout_constraintVertical_bias="0.15" />
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/merienda_one"
             android:text="DONATE"
+            android:textColor="@color/black"
             android:textSize="22sp"
-            android:fontFamily="@font/antic"
             android:textStyle="bold"
-            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/circleImageView"
-            app:layout_constraintStart_toStartOf="@+id/circleImageView"
-            app:layout_constraintTop_toBottomOf="@+id/circleImageView"
+            app:layout_constraintEnd_toEndOf="@+id/donate_button"
+            app:layout_constraintStart_toStartOf="@+id/donate_button"
+            app:layout_constraintTop_toBottomOf="@+id/donate_button"
             app:layout_constraintVertical_bias="0.04" />
 
         <TextView
@@ -106,41 +107,43 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:maxLines="2"
-            android:textSize="16sp"
             android:text="Donate your food\n for needy"
             android:textColor="@color/white"
+            android:fontFamily="@font/antic"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/circleImageView"
-            app:layout_constraintStart_toStartOf="@+id/circleImageView"
+            app:layout_constraintEnd_toEndOf="@+id/donate_button"
+            app:layout_constraintStart_toStartOf="@+id/donate_button"
             app:layout_constraintTop_toBottomOf="@+id/textView8"
             app:layout_constraintVertical_bias="0" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/circleImageView2"
+            android:id="@+id/ngo_agent_button"
             android:layout_width="90dp"
             android:layout_height="90dp"
-            android:src="@drawable/delivery_vehicle"
+            android:elevation="100dp"
+            android:src="@drawable/delivery_vehicle_2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.75"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView7"
-            app:layout_constraintVertical_bias="0.1" />
+            app:layout_constraintVertical_bias="0.15" />
 
         <TextView
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/merienda_one"
             android:text="NGO Agent"
-            android:fontFamily="@font/antic"
-            android:textStyle="bold"
+            android:textColor="@color/black"
             android:textSize="22sp"
-            android:textColor="@color/white"
-            app:layout_constraintVertical_bias="0.04"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/circleImageView2"
-            app:layout_constraintStart_toStartOf="@+id/circleImageView2"
-            app:layout_constraintTop_toBottomOf="@+id/circleImageView2" />
+            app:layout_constraintEnd_toEndOf="@+id/ngo_agent_button"
+            app:layout_constraintStart_toStartOf="@+id/ngo_agent_button"
+            app:layout_constraintTop_toBottomOf="@+id/ngo_agent_button"
+            app:layout_constraintVertical_bias="0.04" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -150,30 +153,35 @@
             android:text="Food pickup and\n deliver"
             android:textColor="@color/white"
             android:textSize="16sp"
+            android:fontFamily="@font/antic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/textView9"
             app:layout_constraintStart_toStartOf="@+id/textView9"
             app:layout_constraintTop_toBottomOf="@+id/textView9"
-            app:layout_constraintVertical_bias="0"/>
+            app:layout_constraintVertical_bias="0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:elevation="60dp"
+        android:id="@+id/need_food"
         android:layout_height="70dp"
         android:background="@drawable/all_curvy"
+        android:elevation="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lottieAnimationView"
         app:layout_constraintVertical_bias="1">
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/more_food_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/merienda_one"
             android:text="I need some Food"
-            android:textColor="@color/orange"
+            android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -189,7 +197,23 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
+            app:layout_constraintTop_toBottomOf="@+id/more_food_button" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/fab_robot"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="16dp"-->
+<!--        android:backgroundTint="#FB377A"-->
+<!--        android:elevation="70dp"-->
+<!--        android:src="@drawable/next_page"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="1"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias=".95" />-->
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
