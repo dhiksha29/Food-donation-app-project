@@ -4,31 +4,28 @@
     tools:showIn = "navigation_view">
 
     <group android:checkableBehavior="single">
-        <item android:title="Search"
-            android:icon="@drawable/search"
-            android:id="@+id/search"/>
-        <item android:title="Basket"
-            android:icon="@drawable/basket"
-            android:id="@+id/basket"/>
-        <item android:title="Favorites"
+        <item android:title="Home"
+            android:icon="@drawable/home"
+            android:id="@+id/home"/>
+        <item android:title="Locate NGO's"
             android:icon="@drawable/favorite"
-            android:id="@+id/favorite"/>
-        <item android:title="Promo-codes"
+            android:id="@+id/locateNGO"/>
+        <item android:title="Coupons"
             android:icon="@drawable/promo_code"
-            android:id="@+id/promo_code"/>
-        <item android:title="Orders"
+            android:id="@+id/coupons"/>
+        <item android:title="Your Donations"
             android:icon="@drawable/orders"
-            android:id="@+id/orders"/>
+            android:id="@+id/donations"/>
     </group>
     <item android:title="">
         <menu>
             <group android:checkableBehavior="single">
-                <item android:title="Settings"
+                <item android:title="About Us"
+                    android:icon="@drawable/about_us_icon"
+                    android:id="@+id/aboutUs"/>
+                <item android:title="User Settings"
                     android:icon="@drawable/settings"
                     android:id="@+id/settings"/>
-                <item android:title="Support"
-                    android:icon="@drawable/support"
-                    android:id="@+id/support"/>
             </group>
         </menu>
     </item>

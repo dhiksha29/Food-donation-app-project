@@ -9,5 +9,9 @@
         <item>@font/arbutus</item>
         <item>@font/bangers</item>
         <item>@font/merienda_one</item>
+        <item>@font/roboto_thin</item>
+        <item>@font/ubuntu</item>
+        <item>@font/ubuntu_bold</item>
+        <item>@font/ubuntu_light</item>
     </array>
 </resources>

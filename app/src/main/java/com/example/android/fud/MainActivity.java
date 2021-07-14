@@ -1,13 +1,19 @@
 package com.example.android.fud;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.view.MenuItem;
 import android.view.WindowManager;
 
 import com.google.android.material.navigation.NavigationView;
@@ -39,8 +45,52 @@ public class MainActivity extends AppCompatActivity {
         toggle.syncState();
 
         if(savedInstanceState==null){
-            getSupportFragmentManager().beginTransaction().replace(R.id.frame, new DashBoardFragment()).commit();
-            navigationView.setCheckedItem(R.id.basket);
+            loadFragment(new DashBoardFragment());
         }
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                int id = menuItem.getItemId();
+                Fragment fragment = null;
+                switch (id){
+                    case R.id.home:
+                        fragment = new DashBoardFragment();
+                        loadFragment(fragment);
+                        break;
+                    case R.id.locateNGO:
+                        fragment = new LocateNGOFragment();
+                        loadFragment(fragment);
+                        break;
+                    case R.id.coupons:
+                        fragment = new CouponsFragment();
+                        loadFragment(fragment);
+                        break;
+                    case R.id.donations:
+                        fragment = new YourDonationsFragment();
+                        loadFragment(fragment);
+                        break;
+                    case R.id.aboutUs:
+                        fragment = new AboutUsFragment();
+                        loadFragment(fragment);
+                        break;
+                    case R.id.settings:
+                        fragment = new UserSettingsFragment();
+                        loadFragment(fragment);
+                        break;
+                    default:
+                        return true;
+                }
+                return true;
+            }
+        });
+    }
+
+    private void loadFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction  = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frame, fragment).commit();
+        drawerLayout.closeDrawer(GravityCompat.START);
+        fragmentTransaction.addToBackStack(null);
     }
 }
