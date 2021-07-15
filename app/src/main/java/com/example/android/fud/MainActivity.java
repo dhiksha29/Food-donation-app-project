@@ -11,10 +11,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -24,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     ActionBarDrawerToggle toggle;
     Toolbar toolbar;
     NavigationView navigationView;
+    ImageView btnRobot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer);
         toolbar = findViewById(R.id.toolbar);
         toolbar.setElevation(0);
+        toolbar.setTitle("");
+        toolbar.setSubtitle("");
         setSupportActionBar(toolbar);
         toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,R.string.open, R.string.close);
         drawerLayout.addDrawerListener(toggle);
@@ -82,6 +88,18 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                 }
                 return true;
+            }
+        });
+
+
+        // Robot Work
+        btnRobot = findViewById(R.id.robot_btn);
+        btnRobot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vibe.vibrate(80);
+                Intent intent  = new Intent(MainActivity.this, NeedFoodActivity.class);
+                startActivity(intent);
             }
         });
     }
