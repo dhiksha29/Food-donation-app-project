@@ -91,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         // Robot Work
         btnRobot = findViewById(R.id.robot_btn);
         btnRobot.setOnClickListener(new View.OnClickListener() {
