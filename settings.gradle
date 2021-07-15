@@ -1,0 +1,2 @@
+rootProject.name = "Donate Page"
+include ':app'
