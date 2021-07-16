@@ -17,9 +17,13 @@ import android.os.Vibrator;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,12 +32,17 @@ public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     NavigationView navigationView;
     ImageView btnRobot;
+    TextView testMail;
+
+    //Firebase
+    FirebaseAuth mFireBaseAuth;
+    private FirebaseAuth.AuthStateListener mAuthStateListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // TO hide the status bar (which contains charging ana all)
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
         // For Vibrations
@@ -84,6 +93,9 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new UserSettingsFragment();
                         loadFragment(fragment);
                         break;
+                    case R.id.logout:
+                        logoutMethod();
+                        break;
                     default:
                         return true;
                 }
@@ -97,10 +109,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 vibe.vibrate(80);
-                Intent intent  = new Intent(MainActivity.this, NeedFoodActivity.class);
+                Intent intent  = new Intent(MainActivity.this, BotActivity.class);
                 startActivity(intent);
             }
         });
+
+
+        //Setting name in Nav_header
+        View headerView = navigationView.getHeaderView(0);
+        testMail = headerView.findViewById(R.id.name);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String name = user.getEmail();
+        testMail.setText(name);
     }
 
     private void loadFragment(Fragment fragment) {
@@ -109,5 +129,12 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.frame, fragment).commit();
         drawerLayout.closeDrawer(GravityCompat.START);
         fragmentTransaction.addToBackStack(null);
+    }
+
+    public void logoutMethod(){
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

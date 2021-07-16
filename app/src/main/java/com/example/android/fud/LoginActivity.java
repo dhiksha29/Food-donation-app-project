@@ -15,6 +15,7 @@ import com.example.android.fud.LoginAdapter;
 import com.example.android.fud.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -22,13 +23,9 @@ public class LoginActivity extends AppCompatActivity {
     float v =0;
     Button loginButton;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-
-        // TO hide the status bar (which contains charging ana all)
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
 
@@ -39,33 +36,12 @@ public class LoginActivity extends AppCompatActivity {
         github = findViewById(R.id.fab_github);
         tabLayout.setupWithViewPager(viewPager);
 
-        // Creating Adapter Class to switch between Fragments
-        //Done
-
         LoginAdapter adapter = new LoginAdapter(this, getSupportFragmentManager());
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
 
-        // Now setting Animations to the buttons and edittext
-        fb.setTranslationY(300);
-        google.setTranslationY(300);
-        github.setTranslationY(300);
-        tabLayout.setTranslationY(300);
+        setAnimations();
 
-        fb.setAlpha(v);
-        google.setAlpha(v);
-        github.setAlpha(v);
-        tabLayout.setAlpha(v);
-
-        fb.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(400).start();
-        google.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(600).start();
-        github.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(100).start();
-
-
-        // Now doing same in Login and SignUp Fragment
-
-
-        // Moving to next Activity
         google = findViewById(R.id.fab_google);
         google.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,4 +52,24 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+    public  void setAnimations(){
+        fb.setTranslationY(300);
+        google.setTranslationY(300);
+        github.setTranslationY(300);
+
+        fb.setAlpha(v);
+        google.setAlpha(v);
+        github.setAlpha(v);
+
+        fb.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(400).start();
+        google.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(600).start();
+        github.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(100).start();
+    }
+
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        mFirebaseAuth.addAuthStateListener(mAuthStateListener);
+//    }
 }
