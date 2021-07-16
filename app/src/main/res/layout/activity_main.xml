@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/bg_gradient"
+tools:context="com.example.bot.activity.MainActivity">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:paddingTop="10dp"
+    android:id="@+id/conversation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/userInput"
+    android:textSize="16sp" />
+
+<!--<EditText-->
+<!--    android:id="@+id/userInput"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_alignParentBottom="true"-->
+<!--    android:layout_margin="10dp"-->
+<!--    android:background="@drawable/bg_edit_text"-->
+<!--    android:fontFamily="@font/montserrat"-->
+<!--    android:hint="Type a message..."-->
+<!--    android:inputType="text"-->
+<!--    android:textColor="#9E9E9E"-->
+<!--    android:padding="12dp"-->
+<!--    android:imeActionId="4"-->
+<!--    android:imeOptions="actionSend"-->
+<!--    android:backgroundTint="@android:color/white"-->
+<!--    android:textSize="16sp"/>-->
+    <EditText
+        android:id="@+id/userInput"
+        android:theme="@style/MyEditText"
+        android:inputType="textShortMessage"
+
+        android:layout_margin="10dp"
+        android:layout_alignParentBottom="true"
+        android:imeOptions="actionSend"
+        android:imeActionId="4"
+        android:textColorHint="#9E9E9E"
+        android:background="@drawable/bg_edit_text"
+
+        android:textColor="#212121"
+        android:backgroundTint="@android:color/white"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:hint="Type a message..."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:singleLine="true" />
+</RelativeLayout>
+
+<!--    android:backgroundTint="@android:color/white"-->
