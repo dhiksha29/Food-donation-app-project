@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12"
-        app:layout_constraintVertical_bias="0.05">
+        app:layout_constraintVertical_bias="0">
 
         <TextView
             android:layout_width="wrap_content"
@@ -71,7 +71,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias=".1" />
+        app:layout_constraintVertical_bias=".05" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -87,6 +87,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
             android:layout_marginRight="40dp"
             android:layout_marginLeft="40dp">
 
@@ -94,7 +95,6 @@
                 android:id="@+id/image_1"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:background="#FFFAFA"
                 android:src="@mipmap/ic_launcher"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -147,6 +147,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
             android:layout_marginRight="40dp"
             android:layout_marginLeft="40dp">
 
@@ -154,8 +155,7 @@
                 android:id="@+id/image_2"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:background="#FFFAFA"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/ruturaj"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -207,6 +207,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
             android:layout_marginRight="40dp"
             android:layout_marginLeft="40dp">
 
@@ -214,8 +215,7 @@
                 android:id="@+id/image_3"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:background="#FFFAFA"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/harish"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -267,6 +267,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:layout_marginBottom="10dp"
             android:layout_marginRight="40dp"
             android:layout_marginLeft="40dp">
 
@@ -274,8 +275,7 @@
                 android:id="@+id/image_4"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:background="#FFFAFA"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/jamshed"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -334,7 +334,6 @@
                 android:id="@+id/image_5"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-                android:background="#FFFAFA"
                 android:src="@mipmap/ic_launcher"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
