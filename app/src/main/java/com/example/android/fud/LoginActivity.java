@@ -26,14 +26,13 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
         ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
         fb = findViewById(R.id.fab_facebook);
         google = findViewById(R.id.fab_google);
-        github = findViewById(R.id.fab_github);
+        github = findViewById(R.id.fab_twitter);
         tabLayout.setupWithViewPager(viewPager);
 
         LoginAdapter adapter = new LoginAdapter(this, getSupportFragmentManager());
@@ -42,13 +41,22 @@ public class LoginActivity extends AppCompatActivity {
 
         setAnimations();
 
-        google = findViewById(R.id.fab_google);
         google.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+                Toast.makeText(LoginActivity.this, "Feature Coming soon!\nPlease SignUp through Email\nand Password", Toast.LENGTH_SHORT).show();
+            }
+        });
+        github.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(LoginActivity.this, "Feature Coming soon!\nPlease SignUp through Email\nand Password", Toast.LENGTH_SHORT).show();
+            }
+        });
+        fb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(LoginActivity.this, "Feature Coming soon!\nPlease SignUp through Email\nand Password", Toast.LENGTH_SHORT).show();
             }
         });
     }

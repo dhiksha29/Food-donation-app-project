@@ -10,19 +10,20 @@
         <item android:title="Locate NGO's"
             android:icon="@drawable/favorite"
             android:id="@+id/locateNGO"/>
-        <item android:title="About Us"
-            android:icon="@drawable/about_us_icon"
-            android:id="@+id/aboutUs"/>
+
         <item android:title="Coupons"
             android:icon="@drawable/promo_code"
             android:id="@+id/coupons"/>
+        <item android:title="Your Donations"
+            android:icon="@drawable/orders"
+            android:id="@+id/donations"/>
     </group>
     <item android:title="">
         <menu>
             <group android:checkableBehavior="single">
-                <item android:title="Your Donations"
-                    android:icon="@drawable/orders"
-                    android:id="@+id/donations"/>
+                <item android:title="About Us"
+                    android:icon="@drawable/about_us_icon"
+                    android:id="@+id/aboutUs"/>
                 <item android:title="User Settings"
                     android:icon="@drawable/settings"
                     android:id="@+id/settings"/>

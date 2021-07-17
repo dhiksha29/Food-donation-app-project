@@ -72,10 +72,7 @@ public class LoginTabFragment extends Fragment {
         forgetPass.animate().translationX(0).alpha(1).setDuration(800).setStartDelay(500).start();
         btnLogin.animate().translationX(0).alpha(1).setDuration(800).setStartDelay(700).start();
 
-        //Firebase Database
         progressBar.setVisibility(View.GONE);
-
-
 
 //        Firebase
         mFirebaseAuth = FirebaseAuth.getInstance();
