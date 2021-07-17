@@ -13,7 +13,7 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.FUD">
-        <activity android:name=".SuccessfulSubmission"></activity>
+        <activity android:name=".SuccessfulSubmission" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,7 +26,7 @@
         <activity android:name=".NgoAgentActivity" />
         <activity android:name=".DonateActivity" />
         <activity android:name=".SplashActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
