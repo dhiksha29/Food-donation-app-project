@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction  = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame, fragment).commit();
         drawerLayout.closeDrawer(GravityCompat.START);
-        fragmentTransaction.addToBackStack(null);
+//        fragmentTransaction.addToBackStack(null);
     }
 
     public void logoutMethod(){

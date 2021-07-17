@@ -3,11 +3,14 @@ package com.example.android.fud;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
@@ -20,19 +23,18 @@ public class NgoAgentActivity extends AppCompatActivity {
     ImageView newImage;
     LinearLayout layout;
     int SELECT_IMAGE_CODE = 1;
+    Button btnSubmit;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // TO hide the status bar (which contains charging ana all)
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_ngo_agent);
+        // For Vibrations
+        Vibrator vibe = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
 
         layout = findViewById(R.id.addImageLayout);
-
         TextView quantity = findViewById(R.id.quantity);
-
         SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -67,6 +69,19 @@ public class NgoAgentActivity extends AppCompatActivity {
                 startActivityForResult(Intent.createChooser(intent, "Title"), SELECT_IMAGE_CODE);
             }
         });
+
+
+        //Submit Button
+        btnSubmit = findViewById(R.id.submit_btn);
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vibe.vibrate(80);
+                Intent intent = new Intent(NgoAgentActivity.this, SuccessfulSubmission.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     @Override
@@ -93,4 +108,5 @@ public class NgoAgentActivity extends AppCompatActivity {
         // adding the image in layout
         layout.addView(imageView);
     }
+
 }
