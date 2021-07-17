@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:padding="5dp">
+
+    <Button
+        android:id="@+id/ngoAgent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="NgoAgent"
+        android:text="Ngo Agent"/>
+
+    <Button
+        android:id="@+id/donate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="DonatePage"
+        android:text="Donate"/>
+
+    <Button
+        android:id="@+id/needFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="NeedFood"
+        android:text="Need Food"/>
+
+    <Button
+        android:id="@+id/ngoPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="NgoPage"
+        android:text="Ngo Page"/>
+
+</LinearLayout>
