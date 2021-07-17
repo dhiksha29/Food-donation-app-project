@@ -3,10 +3,13 @@ package com.example.android.fud;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
@@ -18,7 +21,7 @@ public class DonateActivity extends AppCompatActivity {
     ImageView newImage;
     LinearLayout layout;
     int SELECT_IMAGE_CODE = 1;
-
+    Button btnSubmit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,8 @@ public class DonateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_donate);
 
         layout = findViewById(R.id.addImageLayout);
+        // For Vibrations
+        Vibrator vibe = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
 
         TextView quantity = findViewById(R.id.quantity);
 
@@ -36,7 +41,6 @@ public class DonateActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 quantity.setText("Quantity: " + progress + " People");
             }
-
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
 
@@ -64,7 +68,17 @@ public class DonateActivity extends AppCompatActivity {
             }
         });
 
-
+        //Submit Button
+        btnSubmit = findViewById(R.id.submit_btn1);
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vibe.vibrate(80);
+                Intent intent = new Intent(DonateActivity.this, SuccessfulSubmission.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
     }
 
@@ -78,7 +92,6 @@ public class DonateActivity extends AppCompatActivity {
             newImage.setImageURI(uri);
             addView(newImage,addImage.getWidth(),addImage.getHeight());
         }
-
     }
 
 
@@ -93,5 +106,4 @@ public class DonateActivity extends AppCompatActivity {
         // adding the image in layout
         layout.addView(imageView);
     }
-
 }
