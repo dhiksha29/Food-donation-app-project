@@ -9,8 +9,8 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="About Us"
         android:fontFamily="@font/antic"
+        android:text="About Us"
         android:textColor="@color/orange"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,6 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -36,28 +37,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="16sp"
-            android:gravity="center"
             android:fontFamily="@font/antic"
+            android:gravity="center"
             android:text="We are E-Android Developers"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
-            android:fontFamily="@font/antic"
-            android:textSize="16sp"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/antic"
             android:gravity="center"
-            android:text="There are people who sleep empty stomach, our app acts as an interface between the people who have excess food and the ngos. These ngos furthermore distribute food to needy people\nOur app promotes food security and proper nutrition to all" />
+            android:text="There are people who sleep empty stomach, our app acts as an interface between the people who have excess food and the ngos. These ngos furthermore distribute food to needy people\nOur app promotes food security and proper nutrition to all"
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="16sp"
-            android:gravity="center"
             android:fontFamily="@font/antic"
+            android:gravity="center"
             android:text="And we believe food donation is the best donation"
+            android:textSize="16sp"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -65,8 +66,8 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Creators"
         android:fontFamily="@font/antic"
+        android:text="Creators"
         android:textColor="@color/orange"
         android:textSize="26sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -76,11 +77,11 @@
         app:layout_constraintVertical_bias=".05" />
 
     <LinearLayout
-        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="20dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13"
@@ -89,10 +90,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:layout_marginLeft="40dp">
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/image_1"
@@ -107,20 +108,20 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout2"
                 android:layout_width="match_parent"
-                android:layout_marginLeft="10dp"
                 android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:background="#FFFAFA"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/image_1"
-                app:layout_constraintTop_toTopOf="parent"
-                android:background="#FFFAFA">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
                     android:id="@+id/name_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Yash Sonawane"
                     android:fontFamily="@font/antic"
+                    android:text="Yash Sonawane"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -148,13 +149,14 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:layout_marginLeft="40dp">
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/image_2"
@@ -169,23 +171,23 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout3"
                 android:layout_width="match_parent"
-                android:layout_marginLeft="10dp"
                 android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:background="#FFFAFA"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/image_1"
-                app:layout_constraintTop_toTopOf="parent"
-                android:background="#FFFAFA">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
                     android:id="@+id/name_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ruturaj Ghatage"
-                    android:textStyle="bold"
                     android:fontFamily="@font/antic"
+                    android:text="Ruturaj Ghatage"
                     android:textColor="@color/black"
                     android:textSize="18sp"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias=".05"
@@ -210,13 +212,14 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:layout_marginLeft="40dp">
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/image_3"
@@ -231,21 +234,21 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout4"
                 android:layout_width="match_parent"
-                android:layout_marginLeft="10dp"
                 android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:background="#FFFAFA"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/image_1"
-                app:layout_constraintTop_toTopOf="parent"
-                android:background="#FFFAFA">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
                     android:id="@+id/name_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/antic"
                     android:text="Harish Verma"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/antic"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -272,13 +275,14 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:layout_marginLeft="40dp">
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/image_4"
@@ -293,23 +297,23 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout5"
                 android:layout_width="match_parent"
-                android:layout_marginLeft="10dp"
                 android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:background="#FFFAFA"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/image_1"
-                app:layout_constraintTop_toTopOf="parent"
-                android:background="#FFFAFA">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
                     android:id="@+id/name_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/antic"
                     android:text="Jamshed Damania"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:fontFamily="@font/antic"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias=".05"
@@ -334,12 +338,13 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:layout_marginLeft="40dp">
+            android:orientation="horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/image_5"
@@ -354,23 +359,23 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout6"
                 android:layout_width="match_parent"
-                android:layout_marginLeft="10dp"
                 android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:background="#FFFAFA"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/image_1"
-                app:layout_constraintTop_toTopOf="parent"
-                android:background="#FFFAFA">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
                     android:id="@+id/name_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/antic"
                     android:text="Ayush Gupta"
-                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="18sp"
-                    android:fontFamily="@font/antic"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias=".05"
@@ -400,3 +405,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
