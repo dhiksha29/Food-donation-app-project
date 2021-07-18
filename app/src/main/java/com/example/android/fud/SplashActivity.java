@@ -83,6 +83,11 @@ public class SplashActivity extends AppCompatActivity {
                 .alpha(0f)
                 .setDuration(2000)
                 .setStartDelay(4000);
+        burgerAnim.setAlpha(1f);
+        burgerAnim.animate()
+                .alpha(0f)
+                .setDuration(2000)
+                .setStartDelay(4000);
 
 
         new Handler().postDelayed(new Runnable() {
@@ -101,7 +106,7 @@ public class SplashActivity extends AppCompatActivity {
                 }
                 else{
                     // Directly go to Login Activity
-                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                    Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                     startActivity(intent);
                     finish();
                 }
