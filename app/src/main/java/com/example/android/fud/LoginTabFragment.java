@@ -85,6 +85,7 @@ public class LoginTabFragment extends Fragment {
                 FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
                 // If current User exists (not null) then do this
                 if (mFirebaseUser != null) {
+                    progressBar.setVisibility(View.VISIBLE);
                     Toast.makeText(getActivity(), "Logged In Succcessfully", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getActivity(), MainActivity.class);
                     getActivity().finish();
@@ -97,21 +98,26 @@ public class LoginTabFragment extends Fragment {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
                 String emailId = email.getText().toString();
                 String pwd = pass.getText().toString();
                 if (emailId.isEmpty()) {
+                    progressBar.setVisibility(View.GONE);
                     email.setError("Please Enter Email id");
                     email.requestFocus();
                 } else if (pwd.isEmpty()) {
+                    progressBar.setVisibility(View.GONE);
                     pass.setError("Please valid Password");
                     pass.requestFocus();
                 } else if (pwd.isEmpty() && emailId .isEmpty()) {
+                    progressBar.setVisibility(View.GONE);
                     Toast.makeText(getActivity(), "Fields are Empty", Toast.LENGTH_SHORT).show();
                 } else if (!(pwd.isEmpty() && emailId.isEmpty())) {
                     mFirebaseAuth.signInWithEmailAndPassword(emailId, pwd).addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
                             if (!task.isSuccessful()) {
+                                progressBar.setVisibility(View.GONE);
                                 Toast.makeText(getActivity(), "Incorrect Username or Password", Toast.LENGTH_SHORT).show();
                             } else {
                                 startActivity(new Intent(getActivity(), MainActivity.class));
@@ -120,6 +126,7 @@ public class LoginTabFragment extends Fragment {
                         }
                     });
                 } else {
+                    progressBar.setVisibility(View.GONE);
                     Toast.makeText(getActivity(), "There was some Error, Plz try again Later", Toast.LENGTH_SHORT).show();
                 }
 
