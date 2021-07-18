@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +35,7 @@ public class LSignUpTabFragment extends Fragment {
     //Firebase Database
     FirebaseDatabase rootNode;
     DatabaseReference reference;
+    ProgressBar progressBar;
 
     @Nullable
     @org.jetbrains.annotations.Nullable
@@ -48,10 +50,14 @@ public class LSignUpTabFragment extends Fragment {
         nameId = root.findViewById(R.id.user_FirstName);
         surnameId = root.findViewById(R.id.user_lastName);
         btnSignUp = root.findViewById(R.id.signup_button);
+        progressBar = root.findViewById(R.id.signup_progress);
+
+        progressBar.setVisibility(View.GONE);
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
                 //Firebase Database
                 rootNode = FirebaseDatabase.getInstance(); //Calling the root node
                 reference = rootNode.getReference("users");
@@ -67,14 +73,17 @@ public class LSignUpTabFragment extends Fragment {
                 String email = emailId.getText().toString();
                 String pwd = passwordId.getText().toString();
                 if(email.isEmpty()){
+                    progressBar.setVisibility(View.GONE);
                     emailId.setError("Please Enter Email id");
                     emailId.requestFocus();
                 }
                 else if(pwd.isEmpty()){
+                    progressBar.setVisibility(View.GONE);
                     passwordId.setError("Please enter valid Password");
                     passwordId.requestFocus();
                 }
                 else if(pwd.isEmpty() && email.isEmpty()){
+                    progressBar.setVisibility(View.GONE);
                     Toast.makeText(getActivity(), "Fields are Empty", Toast.LENGTH_SHORT).show();
                 }
                 else if(!(pwd.isEmpty() && email.isEmpty())){
@@ -82,6 +91,7 @@ public class LSignUpTabFragment extends Fragment {
                         @Override
                         public void onComplete(@NonNull @org.jetbrains.annotations.NotNull Task<AuthResult> task) {
                             if(!task.isSuccessful()){
+                                progressBar.setVisibility(View.GONE);
                                 Toast.makeText(getActivity(), "Problem1", Toast.LENGTH_SHORT).show();
                             }
                             else{
@@ -91,6 +101,7 @@ public class LSignUpTabFragment extends Fragment {
                     });
                 }
                 else {
+                    progressBar.setVisibility(View.GONE);
                     Toast.makeText(getActivity(), "There was some Error, Plz try again Later", Toast.LENGTH_SHORT).show();
                 }
             }
