@@ -92,7 +92,7 @@ public class LSignUpTabFragment extends Fragment {
                         public void onComplete(@NonNull @org.jetbrains.annotations.NotNull Task<AuthResult> task) {
                             if(!task.isSuccessful()){
                                 progressBar.setVisibility(View.GONE);
-                                Toast.makeText(getActivity(), "Problem1", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), "Please Use a valid email and a Strong Password", Toast.LENGTH_SHORT).show();
                             }
                             else{
                                 startActivity(new Intent(getActivity(), MainActivity.class));
