@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunito_regular"
             android:text="Want To Share Food?"
-            android:textColor="#FFFDFD"
+            android:textColor="@color/black"
             android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
