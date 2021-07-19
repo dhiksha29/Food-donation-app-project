@@ -2,11 +2,14 @@ package com.example.android.fud;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Vibrator;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
@@ -20,6 +23,7 @@ public class NeedFoodActivity extends AppCompatActivity {
     ImageView newImage;
     LinearLayout layout;
     int SELECT_IMAGE_CODE = 1;
+    Button btnSubmit;
 
 
     @Override
@@ -27,6 +31,8 @@ public class NeedFoodActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_need_food);
 
+        // For Vibrations
+        Vibrator vibe = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
         layout = findViewById(R.id.addImageLayout);
 
         TextView quantity = findViewById(R.id.quantity);
@@ -66,7 +72,17 @@ public class NeedFoodActivity extends AppCompatActivity {
             }
         });
 
-
+        //Submit Button
+        btnSubmit = findViewById(R.id.need_3);
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vibe.vibrate(80);
+                Intent intent = new Intent(NeedFoodActivity.this, SuccessfulSubmission.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
     }
 
