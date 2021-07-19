@@ -14,18 +14,19 @@
         android:theme="@style/Theme.FUD">
         <activity android:name=".SuccessfulSubmission" />
         <activity android:name=".LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".BotActivity" />
         <activity android:name=".NeedFoodActivity" />
         <activity android:name=".NgoAgentActivity" />
         <activity android:name=".DonateActivity" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".MainActivity"
             android:screenOrientation="portrait"/>

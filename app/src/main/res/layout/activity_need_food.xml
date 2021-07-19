@@ -164,11 +164,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
+                android:id="@+id/need_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/shape"
                 app:backgroundTint="@color/orange"
                 android:layout_centerHorizontal="true"
+                android:textColor="@color/white"
                 android:paddingHorizontal="48dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="4dp"
