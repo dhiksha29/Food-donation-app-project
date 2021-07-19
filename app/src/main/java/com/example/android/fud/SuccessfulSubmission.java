@@ -1,6 +1,7 @@
 package com.example.android.fud;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,6 +18,7 @@ public class SuccessfulSubmission extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_successful_submission);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         // For Vibrations
         Vibrator vibe = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
@@ -28,6 +30,7 @@ public class SuccessfulSubmission extends AppCompatActivity {
                 vibe.vibrate(80);
                 Intent intent  = new Intent(SuccessfulSubmission.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

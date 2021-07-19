@@ -55,8 +55,8 @@ public class DashBoardFragment extends Fragment {
         need_food.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                vibe.vibrate(80);
-                Intent intent  = new Intent(getActivity(), NgoAgentActivity.class);
+                vibe.vibrate(20);
+                Intent intent  = new Intent(getActivity(), NeedFoodActivity.class);
                 startActivity(intent);
             }
         });
